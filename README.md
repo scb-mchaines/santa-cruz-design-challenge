@@ -7,7 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Start the app with `npm start`
 
 ### `npm start`
-
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -15,5 +14,10 @@ The page will automatically reload if you make edits.<br>
 You will also see any lint errors in the console.
 
 ### Design challenge
-1. See the list of build kit options at the bottom? It's sure ugly. Can you make it more customer friendly to look at?
-2. How will the current layout look on a mobile device? C an you adjust the layout so that it looks nice across screen sizes?
+1. Fork the repo so you are working on your own copy.
+2. See the list of build kit options at the bottom? It's sure ugly. Can you make it more customer friendly to look at?
+3. How will the current layout look on a mobile device? Can you adjust the layout so that it looks nice across screen sizes?
+
+#### Tips
+- You may add or change whatever files you deem necessary, but you should be able to make considerable progress focusing only in `src/App.js` and `src/App.css`.
+- If you don't know React yet, don't sweat. You shouldn't really need to make changes to the React code to complete this challenge. All of the markup is in App.js and you can style those JSX elements just like they're HTML.
