@@ -24,6 +24,6 @@ export const getBuildKits = async () => {
     return new Promise(resolve => {
         window.setTimeout(() => {
             resolve(buildKits);
-        }, 500);
+        }, 2000);
     })
 }

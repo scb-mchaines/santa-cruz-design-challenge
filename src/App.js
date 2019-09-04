@@ -18,7 +18,6 @@ export default class App extends React.Component {
 
   componentDidMount = async () => {
     const kits = await getBuildKits();
-    console.log('got build kits', kits);
     this.setState({
       buildKitsLoading: false,
       buildKits: kits
@@ -31,9 +30,12 @@ export default class App extends React.Component {
       options={this.state.buildKits.map(buildKit => {
         return {value: buildKit.id, label: buildKit.name}
       })}
-      onChange={(selectedOption => this.setState({
-        selectedBuildKit: selectedOption.value
-      }))} 
+      onChange={(selectedOption => {
+        console.log('changing to selected option', selectedOption)
+        this.setState({
+          selectedBuildKit: selectedOption.value
+        })
+      })}
       />
     );
   }
@@ -45,7 +47,8 @@ export default class App extends React.Component {
       )
     }
 
-    const buildKit = this.state.buildKits.find(kit => kit.id = this.state.selectedBuildKit);
+    const buildKit = this.state.buildKits.find(kit => kit.id === this.state.selectedBuildKit);
+    console.log('showing build kit details with state', this.state);
     return (
       <>
         <div id='build-kit-info'>
@@ -53,7 +56,7 @@ export default class App extends React.Component {
         </div>
         <ul id='build-kit-details-list'>
           {buildKit.details.map(detail => {
-            return <li className='build-kit-list-item'>
+            return <li key={detail.label} className='build-kit-list-item'>
               <div className='list-item-label'>{detail.label}</div><div className='list-item-value'>{detail.value}</div>
             </li>
           })}
@@ -67,7 +70,7 @@ export default class App extends React.Component {
     const loader = (<div className='loader'>Loading...</div>)
 
     return (
-      <div className='product-page'>
+      <div id='product-page'>
         <div className='product-info'>
           <h1 className='product-title'>Tallboy</h1>
           <img src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
@@ -79,8 +82,8 @@ export default class App extends React.Component {
           <h2 className='build-kits-header'>Build Kit Options</h2>
           {this.state.buildKitsLoading ? loader : (
             <>
-              <div className='build-kit-selector'>{this.renderBuildKitSelector()}</div>
-              <div className='build-kit-details'>{this.showBuildKitDetails()}</div>
+              <div id='build-kit-selector'>{this.renderBuildKitSelector()}</div>
+              <div id='build-kit-details'>{this.showBuildKitDetails()}</div>
             </>
           )}
         </div>
