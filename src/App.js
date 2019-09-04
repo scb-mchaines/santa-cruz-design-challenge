@@ -25,13 +25,16 @@ export default class App extends React.Component {
   }
 
   renderBuildKitSelector = () => {
+    const selectBoxOptions = this.state.buildKits.map(buildKit => (
+      {
+        value: buildKit.id, 
+        label: buildKit.name
+      }
+    ));
     return (
       <Select 
-      options={this.state.buildKits.map(buildKit => {
-        return {value: buildKit.id, label: buildKit.name}
-      })}
+      options={selectBoxOptions}
       onChange={(selectedOption => {
-        console.log('changing to selected option', selectedOption)
         this.setState({
           selectedBuildKit: selectedOption.value
         })
@@ -40,22 +43,21 @@ export default class App extends React.Component {
     );
   }
 
-  showBuildKitDetails = () => {
+  renderBuildKitDetails = () => {
     if (!this.state.selectedBuildKit) {
       return (
         <p>Select a build kit to see more details</p>
       )
     }
 
-    const buildKit = this.state.buildKits.find(kit => kit.id === this.state.selectedBuildKit);
-    console.log('showing build kit details with state', this.state);
+    const kit = this.state.buildKits.find(kit => kit.id === this.state.selectedBuildKit);
     return (
       <>
         <div id='build-kit-info'>
-          {`${buildKit.name}`}
+          {`${kit.name}`}
         </div>
         <ul id='build-kit-details-list'>
-          {buildKit.details.map(detail => {
+          {kit.details.map(detail => {
             return <li key={detail.label} className='build-kit-list-item'>
               <div className='list-item-label'>{detail.label}</div><div className='list-item-value'>{detail.value}</div>
             </li>
@@ -83,7 +85,7 @@ export default class App extends React.Component {
           {this.state.buildKitsLoading ? loader : (
             <>
               <div id='build-kit-selector'>{this.renderBuildKitSelector()}</div>
-              <div id='build-kit-details'>{this.showBuildKitDetails()}</div>
+              <div id='build-kit-details'>{this.renderBuildKitDetails()}</div>
             </>
           )}
         </div>
