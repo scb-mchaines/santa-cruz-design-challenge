@@ -15,8 +15,9 @@ You will also see any lint errors in the console.
 
 ### Design challenge
 1. Fork the repo so you are working on your own copy.
-2. See the list of build kit options at the bottom? It's sure ugly. Can you make it more customer friendly to look at?
+2. See the list of build kit options at the bottom? It's sure ugly. Can you make it nicer to look at?
 3. How will the current layout look on a mobile device? Can you adjust the layout so that it looks nice across screen sizes?
+4. When you're done, open a PR against this repo so we can review your changes. Thanks for participating!
 
 #### Tips
 - You may add or change whatever files you deem necessary, but you should be able to make considerable progress focusing only in `src/App.js` and `src/App.css`.
