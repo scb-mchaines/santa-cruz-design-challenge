@@ -8,6 +8,7 @@
 
 
 ### Design challenge
+We've intentionally made this design challenge a little open ended. Target spending about 2 hours on this to demonstrate your ability to get your environment running, operate git, and do some CSS layout and javascript. Sure, you could probably spend all weekend making it awesome, and if you do we'd love to see what you've done, but it's absolutely not expected or required.
 1. Fork the repo so you are working on your own copy. **Make your repo private!** so that other candidates can't view your solutions!
 2. See the list of build kit options at the bottom? It's sure ugly. Can you make it nicer to look at?
 3. How will the current layout look on a mobile device? Can you adjust the layout so that it works across screen sizes?
