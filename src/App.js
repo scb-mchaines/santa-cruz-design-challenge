@@ -71,9 +71,9 @@ export default class App extends React.Component {
 
     return (
       <div id='product-page'>
-        <div className='product-info'>
-          <h1 className='product-title'>Tallboy</h1>
-          <img src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
+        <div id='product-info'>
+          <h1 id='product-title'>Tallboy</h1>
+          <img id='product-image' src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
           <div className='product-description'>
             {ProductCopy}
           </div>
