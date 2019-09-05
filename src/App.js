@@ -3,7 +3,7 @@ import Select from 'react-select'
 
 
 import ProductCopy from './product-copy';
-import { getBuildKits } from './build-kits-client';
+import { getBuildKits } from './api-client';
 import './App.css';
 
 export default class App extends React.Component {
