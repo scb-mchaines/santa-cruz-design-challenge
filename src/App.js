@@ -46,7 +46,7 @@ export default class App extends React.Component {
   renderBuildKitDetails = () => {
     if (!this.state.selectedBuildKit) {
       return (
-        <p>Select a build kit to see more details</p>
+        <p>Select a build kit to see more details.</p>
       )
     }
 
@@ -59,7 +59,8 @@ export default class App extends React.Component {
         <ul id='build-kit-details-list'>
           {kit.details.map(detail => {
             return <li key={detail.label} className='build-kit-list-item'>
-              <div className='list-item-label'>{detail.label}</div><div className='list-item-value'>{detail.value}</div>
+              <div className='list-item-label'>{detail.label}</div>
+              <div className='list-item-value'>{detail.value}</div>
             </li>
           })}
         </ul>
@@ -74,14 +75,18 @@ export default class App extends React.Component {
     return (
       <div id='product-page'>
         <div id='product-info'>
-          <h1 id='product-title'>Tallboy</h1>
-          <img id='product-image' src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
+        <img id='product-image' src='https://www.santacruzbicycles.com/files/styles/scb_natural_2000_auto/public/hero/purp_hero.jpg?itok=tpOx2XHB' alt='tallboy'/>
+          <div id='info-wrap'>
+            <h1 id='product-title'>Tallboy</h1>
+            <h3 id='product-price'>$2699 USD (MSRP)</h3>
+          </div>
+          
           <div className='product-description'>
             {ProductCopy}
           </div>
         </div>
         <div className='build-kits'>
-          <h2 className='build-kits-header'>Build Kit Options</h2>
+          <h2 className='build-kits-header'>Choose Build Kit Options</h2>
           {this.state.buildKitsLoading ? loader : (
             <>
               <div id='build-kit-selector'>{this.renderBuildKitSelector()}</div>
