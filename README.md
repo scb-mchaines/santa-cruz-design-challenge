@@ -6,8 +6,8 @@ Thank you for your interest in Santa Cruz Bikes! This is a practical coding chal
 3. See the list of build kit options at the bottom? Apply a little bit of nicer styling there:
     - Add a background to every other item
     - Adjust the vertical spacing to be less crowded
-4. Adjust the product image width so that it scales correctly across device sizes. Eliminate any need for horizontal scrolling.
-5. It would be nice if customers knew the build kits' price. It's in the data structure returned from the API. Add it to display alongside each kit's title in the build select menu and as an item in the spec table.
+4. Adjust the hero image width so that it scales correctly across device sizes. Eliminate any need for horizontal scrolling.
+5. It would be nice if customers knew the build kits' price. It's in the data structure returned from the API. Add it to display alongside each kit's title in the build select menu.
 6. **Additional Challenge:** Refactor the hero image into its own component that displays an image along with a call to action button (check out the Santa Cruz homepage for an idea what this would look like). The component should have an api like 
     ```
     <HeroImage 
