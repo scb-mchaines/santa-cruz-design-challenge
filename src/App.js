@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
 
+import SpecTable from './spec-table';
 
 import ProductCopy from './product-copy';
 import { getBuildKits } from './api-client';
@@ -51,21 +52,11 @@ export default class App extends React.Component {
     }
 
     const kit = this.state.buildKits.find(kit => kit.id === this.state.selectedBuildKit);
-    return (
-      <>
-        <div id='build-kit-info'>
-          {`${kit.name}`}
-        </div>
-        <ul id='build-kit-details-list'>
-          {kit.details.map(detail => {
-            return <li key={detail.label} className='build-kit-list-item'>
-              <div className='list-item-label'>{detail.label}</div><div className='list-item-value'>{detail.value}</div>
-            </li>
-          })}
-        </ul>
-      </>
 
-    )
+    return <SpecTable
+      title={kit.name}
+      items={kit.details}
+    />
   }
 
   render = () => {
