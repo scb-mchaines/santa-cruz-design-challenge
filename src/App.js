@@ -1,5 +1,7 @@
 import React from 'react';
 import Select from 'react-select'
+import styled from 'styled-components';
+
 
 import SpecTable from './spec-table';
 
@@ -63,23 +65,31 @@ export default class App extends React.Component {
     const loader = (<div className='loader'>Loading...</div>)
 
     return (
-      <div id='product-page'>
-        <div id='product-info'>
-          <h1 id='product-title'>Tallboy</h1>
-          <img id='product-image' src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
+      <PageWrapper>
+        <div>
+          <h1>Tallboy</h1>
+          <img src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
           <div className='product-description'>
             {ProductCopy}
           </div>
         </div>
-        <div className='build-kits'>
-          <h2 className='build-kits-header'>Build Kit Options</h2>
+        <div>
+          <h2>Build Kit Options</h2>
           {this.state.buildKitsLoading ? loader : (
             <>
-              <div id='build-kit-selector'>{this.renderBuildKitSelector()}</div>
-              <div id='build-kit-details'>{this.renderBuildKitDetails()}</div>
+              <SelectWrapper>{this.renderBuildKitSelector()}</SelectWrapper>
+              <div>{this.renderBuildKitDetails()}</div>
             </>
           )}
         </div>
-      </div>
+        </PageWrapper>
   )};
 }
+
+const PageWrapper = styled.div`
+  padding: 50px;
+`;
+
+const SelectWrapper = styled.div`
+  width: 200px;
+`;

@@ -7,7 +7,7 @@ We've intentionally made this design challenge a little open ended. We'll evalua
     - Add a background to every other item
     - Adjust the vertical spacing to be less crowded
 4. How will the current layout look on a mobile device? Adjust the layout as needed so that it works across screen sizes.
-5. It would be nice if customers knew the build kits' price. It's in the data structure returned from the API. Add it to display alongside the build kit's title and in the build kit select menu.
+5. It would be nice if customers knew the build kits' price. It's in the data structure returned from the API. Add it to display alongside each kit's title in the build select menu and as an item in the spec table.
 6. When you're done, or at the end of 2 hours, be sure to push your progress to your github repo, and share access with github user scb-mchaines (that's me!) so we can check out your awesome design work.
 
 ## Running the app
