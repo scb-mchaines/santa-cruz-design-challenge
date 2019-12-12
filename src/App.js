@@ -1,10 +1,11 @@
 import React from 'react';
 import Select from 'react-select'
+import styled from 'styled-components';
 
+import SpecTable from './spec-table';
 
 import ProductCopy from './product-copy';
 import { getBuildKits } from './api-client';
-import './App.css';
 
 export default class App extends React.Component {
   constructor() {
@@ -51,44 +52,45 @@ export default class App extends React.Component {
     }
 
     const kit = this.state.buildKits.find(kit => kit.id === this.state.selectedBuildKit);
-    return (
-      <>
-        <div id='build-kit-info'>
-          {`${kit.name}`}
-        </div>
-        <ul id='build-kit-details-list'>
-          {kit.details.map(detail => {
-            return <li key={detail.label} className='build-kit-list-item'>
-              <div className='list-item-label'>{detail.label}</div><div className='list-item-value'>{detail.value}</div>
-            </li>
-          })}
-        </ul>
-      </>
 
-    )
+    return <SpecTable
+      title={kit.name}
+      items={kit.details}
+    />
   }
 
   render = () => {
     const loader = (<div className='loader'>Loading...</div>)
 
+    const headerImageSource = 'https://www.santacruzbicycles.com/files/styles/scb_natural_2000_auto/public/hero/my20_garage_ht_blue.jpg';
     return (
-      <div id='product-page'>
-        <div id='product-info'>
-          <h1 id='product-title'>Tallboy</h1>
-          <img id='product-image' src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
+      <PageWrapper>
+        <div>
+          <h1>Tallboy</h1>
+          <img src={headerImageSource} alt='tallboy'/>
           <div className='product-description'>
             {ProductCopy}
           </div>
         </div>
-        <div className='build-kits'>
-          <h2 className='build-kits-header'>Build Kit Options</h2>
+        <div>
+          <h2>Build Kit Options</h2>
           {this.state.buildKitsLoading ? loader : (
             <>
-              <div id='build-kit-selector'>{this.renderBuildKitSelector()}</div>
-              <div id='build-kit-details'>{this.renderBuildKitDetails()}</div>
+              <SelectWrapper>{this.renderBuildKitSelector()}</SelectWrapper>
+              <div>{this.renderBuildKitDetails()}</div>
             </>
           )}
         </div>
-      </div>
+        </PageWrapper>
   )};
 }
+
+const PageWrapper = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+`;
+
+const SelectWrapper = styled.div`
+  width: 200px;
+`;
