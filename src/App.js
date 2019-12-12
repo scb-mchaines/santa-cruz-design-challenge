@@ -2,7 +2,6 @@ import React from 'react';
 import Select from 'react-select'
 import styled from 'styled-components';
 
-
 import SpecTable from './spec-table';
 
 import ProductCopy from './product-copy';
@@ -63,11 +62,12 @@ export default class App extends React.Component {
   render = () => {
     const loader = (<div className='loader'>Loading...</div>)
 
+    const headerImageSource = 'https://www.santacruzbicycles.com/files/styles/scb_natural_2000_auto/public/hero/my20_garage_ht_blue.jpg';
     return (
       <PageWrapper>
         <div>
           <h1>Tallboy</h1>
-          <img src='https://www.santacruzbicycles.com/files/styles/scb_crop_520_333/public/frame/thumbs/storm_thumb.jpg?itok=22cJJx21' alt='tallboy'/>
+          <img src={headerImageSource} alt='tallboy'/>
           <div className='product-description'>
             {ProductCopy}
           </div>
@@ -86,7 +86,9 @@ export default class App extends React.Component {
 }
 
 const PageWrapper = styled.div`
-  padding: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
 `;
 
 const SelectWrapper = styled.div`
