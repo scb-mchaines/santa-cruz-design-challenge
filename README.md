@@ -1,25 +1,31 @@
 
 ### Design challenge
-We've intentionally made this design challenge a little open ended. We'll evaluate your work at the end of 2 hours, so be sure to push a commit at the 2h mark. If you want to continue working past 2h that's cool, and if you do we'd love to see what you've done, but it's absolutely not expected or required.
+Thank you for your interest in Santa Cruz Bikes! This is a practical coding challenge that we use as part of the interview screening process. It's meant to reflect some practical challenges we encounter as we build new experiences for our customers. The requested tasks below should take you a couple of hours, but feel free to embellish your work to highlight your skills if you'd like. However, be sure to push commits to your code as you make progress -- we'll be looking at your timing as well as the finished product, and will use that commit history to get an idea of quickly you were able to progress through the tasks.
 1. Create a new [mirror/copy](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository) of this repo on Github. **Make your repo private!** so that other candidates can't view your solutions.
 2. Get the app running locally.
 3. See the list of build kit options at the bottom? Apply a little bit of nicer styling there:
     - Add a background to every other item
     - Adjust the vertical spacing to be less crowded
-4. How will the current layout look on a mobile device? Adjust the layout as needed so that it works across screen sizes.
+4. Adjust the product image width so that it scales correctly across device sizes. Eliminate any need for horizontal scrolling.
 5. It would be nice if customers knew the build kits' price. It's in the data structure returned from the API. Add it to display alongside each kit's title in the build select menu and as an item in the spec table.
-6. When you're done, or at the end of 2 hours, be sure to push your progress to your github repo, and share access with github user scb-mchaines (that's me!) so we can check out your awesome design work.
+6. **Additional Challenge:** Refactor the hero image into its own component that displays an image along with a call to action button (check out the Santa Cruz homepage for an idea what this would look like). The component should have an api like 
+    ```
+    <HeroImage 
+        src={'// the image URL'}
+        ctaButtonText={'See The Bikes'}
+        ctaButtonURL={'https://www.santacruzbicycles.com/en-US/bikes'}
+    />
+    ```
 
 ## Running the app
 ### Install dependencies
-- First, you'll need NodeJS (which will come with npm). Download it from https://nodejs.org/en/
 - From in the santa-cruz-design-challenge directory, run `npm install`
 - Start the app with `npm start`
 - This should launch a server on http://localhost:3000 which you can view in your browser.
     - The page will automatically reload when you save changes in the project.
 
 #### Tips
-- You may add or change whatever files you deem necessary, but you should be able to make considerable progress focusing only in `src/App.js` and `src/App.css`.
-- If you don't know React yet, don't sweat. You shouldn't really need to make changes to the React code to complete this challenge. All of the markup is in App.js and you can style those JSX elements just like they're HTML.
+- 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
