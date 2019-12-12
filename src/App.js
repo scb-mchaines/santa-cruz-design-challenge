@@ -7,7 +7,6 @@ import SpecTable from './spec-table';
 
 import ProductCopy from './product-copy';
 import { getBuildKits } from './api-client';
-import './App.css';
 
 export default class App extends React.Component {
   constructor() {
