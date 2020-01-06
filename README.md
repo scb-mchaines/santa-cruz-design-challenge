@@ -3,7 +3,7 @@
 Thank you for your interest in Santa Cruz Bikes! This is a practical coding challenge that we use as part of the interview screening process. It's meant to reflect some practical challenges we encounter as we build new experiences for our customers. The requested tasks below should take you a couple of hours, but feel free to embellish your work to highlight your skills if you'd like. However, be sure to push commits to your code as you make progress -- we'll be looking at your timing as well as the finished product, and will use that commit history to get an idea of quickly you were able to progress through the tasks.
 1. Create a new [mirror/copy](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository) of this repo on Github. **Make your repo private!** so that other candidates can't view your solutions.
 2. Get the app running locally.
-3. See the list of build kit options at the bottom? Apply a little bit of nicer styling there:
+3. See the list of build kit options at the bottom? After you select an option, it shows a list of tech specs that looks pretty ugly. Let's work on the tech spec table:
     - Add a background to every other item
     - Adjust the vertical spacing to be less crowded
 4. Adjust the hero image width so that it scales correctly across device sizes. Eliminate any need for horizontal scrolling.
